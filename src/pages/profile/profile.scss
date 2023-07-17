@@ -1,0 +1,102 @@
+@import "../../index.scss";
+
+.profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    .images {
+      position: relative;
+      .cover {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .profilePic {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 140px;
+      }
+    }
+    .profileContainer {
+      padding: 15px 50px;
+      @include mobile {
+        padding: 20px;
+      }
+      .uInfo {
+        height: 180px;
+        -webkit-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.9);
+        -moz-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.9);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        margin-bottom: 20px;
+        @include mobile {
+          height: 30vh;
+          flex-direction: column;
+          padding: 20px;
+          margin-top: 50px;
+          gap: 10px;
+        }
+        .left {
+          flex: 1;
+          display: flex;
+          gap: 10px;
+          a {
+            color: themed("textColor");
+          }
+        }
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          span {
+            font-size: 24px;
+            font-weight: 500;
+          }
+          .info {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            .item {
+              display: flex;
+              align-items: center;
+              color: themed("textColorSoft");
+
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+          button {
+            border: none;
+            padding: 8px;
+            color: white;
+            cursor: pointer;
+            background-color: #5271ff;
+            border-radius: 5px;
+          }
+        }
+        .right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
